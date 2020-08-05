@@ -21,9 +21,9 @@ services:
             - "--lower_case_table_names=1"        
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: sf4
-            MYSQL_USER: sf4
-            MYSQL_PASSWORD: sf4
+            MYSQL_DATABASE: mdp
+            MYSQL_USER: mdp
+            MYSQL_PASSWORD: mdp
 
     php:
         build: .docker/php
