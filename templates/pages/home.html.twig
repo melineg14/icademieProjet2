@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Printing3D{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="banner">
+        <p class="slogan">Des objets du quotidien malins qui vont vous simplifier la vie</p>
+    </div>
+    <div class="white-bloc">
+        <div class="about">
+            <h1>A PROPOS / LE PROJET</h1>
+            <h2>Printing3D, une future startup qui pense à vous</h2>
+            <p>
+                Printing3D est une startup en cours de création. Depuis juillet 2019, nous nous efforçons de
+                créer des produits d'impression 3D pour vous simplifier la vie.
+            </p>
+            <p>
+                Ce site vous présente nos produits phares : des objets malins qui vont révolutionner votre
+                quotidien. Notre projet est de, à terme, vous vendre soit nos fichiers STL à imprimer de
+                vous-mêmes soit de vous livrer directement nos produits déjà construits. Nous mettons ainsi en
+                place un système participatif : c'est à vous de nous aider ! Tout d'abord, nous comptons
+                énormément sur vos avis et sur vos idées si vous en avez. Si vous ne trouvez pas l'objet que
+                vous souhaitez, vous pouvez nous le suggérer ! Une rubrique est prévue à cet effet dans l'onglet
+                <a class="home-link" href="produits.html">produits</a>. De plus, Si le projet vous plaît, vous
+                pouvez nous aider à
+                le financer en cliquant <a class="home-link" href="#">ici</a>. Vous pouvez également nous <a
+                    class="home-link" href="#">suivre sur les réseaux sociaux</a>. Vous avez donc compris, vous
+                êtes essentiels à ce projet, vous y avez un rôle. Pour plus de renseignement, n'hésitez pas à <a
+                    class="home-link" href="contact.html">nous contacter</a>.
+            </p>
+        </div>
+    </div>
+    <div class="white-bloc">
+        <div class="product-presentation">
+            <h1>NOS PRODUITS / CATEGORIES</h1>
+            <div class="row">
+                <div id="product-presentation-img" class="col"></div>
+                <div class="col category-presentation">
+                    <div class="frame">
+                        <div class="second-frame">
+                            <h3>
+                                <img class="category-icone" src="../assets/img/icones/yellow_home.png"
+                                    alt="Icone représentant une maison">Pour la maison
+                            </h3>
+                            <p>
+                                Nous avons tout ce qu'il vous faut ! Que ce soit pour la cuisine (vaisselle et
+                                équipements), ou bien pour la salle de bain, en passant même par des objets
+                                divers qui vont vous surprendre, créés simplement pour vous simplifier le
+                                quotidien !
+                            </p>
+                        </div>
+                    </div>
+                    <div class="frame">
+                        <div class="second-frame">
+                            <h3>
+                                <img class="category-icone" src="../assets/img/icones/yellow_flower.png"
+                                    alt="Icone représentant une fleur">Pour les jardins et plantes
+                            </h3>
+                            <p>
+                                Que ce soit pour votre extérieur, votre jardin ou pour vos plantes, vous
+                                trouverez votre bonheur parmi nos produits. Une fois de plus, vous serez surpris de
+                                tout ce que nous avons pu concevoir !
+                            </p>
+                        </div>
+                    </div>
+                    <a class="home-link" href="produits.html">
+                        <button type="button" id="btn-seeproducts" class="btn">>>VOIR LES PRODUITS</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="white-bloc">
+        <div class="advantages">
+            <h1>LES PLUS DE PRINTING3D</h1>
+            <div class="row">
+                <div class="col circle">
+                    <h5>Qualité</h5>
+                    <p>Printing3D vous propose des objets ainsi qu'un échange de qualité</p>
+                </div>
+                <div class="col circle">
+                    <h5>Exigence</h5>
+                    <p>Printing3D c'est de l'exigence pour vous assurer les meilleurs services, car
+                        Printing3D pense premièrement à vous !</p>
+                </div>
+                <div class="col circle">
+                    <h5>Technicité</h5>
+                    <p>Printing3D met à votre service les meilleurs ingénieurs pour vous proposer des
+                        objets d'une excellente technicité</p>
+                </div>
+                <div class="col circle">
+                    <h5>Finitions</h5>
+                    <p>Printing3D vous propose de nombreuses possibilités de finitions pour correspondre
+                        à vos goûts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="partners">
+            <h1>NOS PARTENAIRES</h1>
+            <h4>N'hésitez pas à devenir partenaires, <a class="home-link" href="contact.html">contactez nous</a>
+                pour que cette rubrique se remplisse !</h4>
+        </div>
+    </div>
+</div>
+{% endblock %}
