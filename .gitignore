@@ -17,4 +17,5 @@
 
 ###> docker ###
 .docker/data/*
+.docker/data/
 ###< docker ###
