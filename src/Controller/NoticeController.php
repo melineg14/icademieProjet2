@@ -5,17 +5,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ProductController extends AbstractController
+class NoticeController extends AbstractController
 {
     /**
-     * @Route("/produits", name="products")
+     * @Route("/mentionslegales", name="notice")
      * @return Response
      */
 
     public function index(): Response
     {
-        return $this->render('pages/products.html.twig',[
-            'current_page' => 'products'
+        return $this->render('pages/notice.html.twig',[
+            'current_page' => 'notice'
         ]);
     }
 }

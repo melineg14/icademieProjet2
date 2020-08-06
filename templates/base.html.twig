@@ -5,39 +5,48 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+        <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <nav onclick="hideDropContent()">
-            <ul>
-              <li class="header-item">
-                <img id="logo-header" src="../assets/img/general/logo.png" alt="Logo de l'entreprise Printing3D">
-              </li>
-              <li class="header-item">
-                <a class="header-link header-link-active" href="{{ path('home')}}">ACCUEIL</a>
-              </li>
-              <li class="header-item">
-                <a class="header-link" href="{{ path('products')}}">PRODUITS</a>
-              </li>
-              <li class="header-item">
-                <div class="dropdown">
-                  <button onmouseover="showDropContent()" onmouseout="hideDropContent()" class="dropbtn">AUTRE ∨</button>
-                  <div onmouseover="showDropContent()" class="dropdown-content" id="dropcontent">
-                    <a class="dropdown-link" href="contact.html">CONTACT</a>
-                    <a class="dropdown-link" href="mentions.html">MENTIONS LEGALES</a>
-                  </div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand mr-auto" href="{{ path('home') }}"><img id="logo-header" src="../assets/img/logo.bmp"
+          alt="logo de l'entreprise Printing3D"></a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-5">
+            <li class="nav-item mr-5 {% if current_page is defined and current_page == 'home' %} active {% endif %}">
+              <a class="nav-link" href="{{ path('home')}}">Accueil</a>
+            </li>
+            <li class="nav-item mr-5 {% if current_page is defined and current_page == 'products' %} active {% endif %}">
+              <a class="nav-link" href="{{ path('products')}}">Nos Produits</a>
+            </li>
+            <li class="nav-item mr-5 {% if current_page is defined and current_page == 'contact' %} active {% endif %}">
+              <a class="nav-link" href="{{ path('contact')}}">Contact</a>
+            </li>
+            <li class="nav-item mr-5 {% if current_page is defined and current_page == 'notice' %} active {% endif %}">
+              <a class="nav-link" href="{{ path('notice')}}">Mentions légales</a>
+            </li>
+            <li class="nav-item mr-5 dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Bienvenue user.name</a>
+              {# {% if current_page is defined and current_page == userspace %}active{% endif %} #}
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Mon compte</a>
+                <a class="dropdown-item" href="#">Mon panier</a>
+                <a class="dropdown-item" href="#">Mes commandes</a>
+                <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Déconnexion</a>
                 </div>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
-              <button id="btn-search" type="submit">Rechercher</button>
-            </form>
-          </nav>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=" "><img id="basket-icone" src=" "
+            alt="icone du panier"></a>
+            </li>            
+          </ul>
+        </div>
+      </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
-        script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
         integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
