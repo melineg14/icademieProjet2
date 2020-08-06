@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les produits{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1>Gérer les produits</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.title }}</td>
+            <td>
+                <a class="btn btn-warning" href="{{ path('admin.product.edit', {id: product.id})}}">Editer</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="text-right">
+        <a class="btn btn-warning" href="{{ path('admin.product.new')}}">Ajouter un produit</a>
+    </div>
+        {% endfor %}
+</div>
+
+{% endblock %}

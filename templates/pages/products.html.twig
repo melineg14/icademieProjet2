@@ -27,7 +27,7 @@
                     <option>Autre</option>
                 </select>
             </div>
-            <button type="submit" id="btn-sugg" class="btn btn-warning">SUGGERER</button>
+            <button type="submit" id="btn-sugg" class="btn btn-warning">Suggérer</button>
         </form>
     </div>
     <h1>NOS PRODUITS</h1>
@@ -57,71 +57,53 @@
         </ul>
     </div>
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="kitchen" role="tabpanel" aria-labelledby="kitchen">
+        {% for product in products %}
+        <div class="tab-pane fade show active" id="{{ product.getCatType }}" role="tabpanel" aria-labelledby="{{ product.getCatType }}">
             <div class="products-list">
-                <h4>Produits pour la cuisine</h4>
-                <div class="cards row" id="kitchen-cards">
-                    <div id="card" class="card col-4">
-                        <img src="" height="250px" class="card-img-top" alt="Photographie du produit">
-                        <div class="card-body">
-                            <h5 class="card-title"> </h5>
-                            <button type="button" class="btn" id="btn-description" data-toggle="modal"
-                                data-target="#modal-window" data-description="" data-image="" data-title="">>>VOIR LE
-                                DESCRIPTIF</button>
+                <h4>{{ product.getCatName }}</h4>
+                <div class="row"> 
+                    <div class="col-4">
+                        <div class="card mb-3 mt-3 mr-3">
+                            <h3 class="card-header">{{ product.title }}</h3>
+                            <img style="height: 200px; width: 100%; display: block;" src="{# product.img et extension #}" alt="Photographie du produit">
+                            <div class="card-body">
+                              <p class="card-text">{{ product.description }}</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">{{ product.price }} €</li>
+                              <li class="list-group-item"></li>
+                            </ul>
+                            <div class="card-body">
+                                <button type="button" class="btn" id="btn-description" data-toggle="modal"
+                                data-target="#modal-window" data-description="" data-image="" data-title="">>Voir le détail</button>
+                                <a href="#" class="card-link"><img src=" " alt="icone d'un panier">Ajouter au panier</a>
+                            </div>
+                            <div class="card-footer text-muted"> 
+                                {# {{ product.getCreatedAt }} #}
+                            </div>
+                          </div>
+                    </div>
+                    <div class="modal fade" id="modal-window" tabindex="-1" role="dialog" aria-labelledby="FenêtreModale"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id=""></h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <img class="modal-image" src="{# product.detail_img et detail_extension #}" height="175px" alt="Autre photographie du produit">
+                                <div class="modal-description mr-2 ml-2">
+                                    {{ product.detail }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="garden" role="tabpanel" aria-labelledby="garden">
-            <div class="products-list">
-                <h4>Jardin et plantes</h4>
-                <div class="cards row" id="garden-cards">
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="diverse" role="tabpanel" aria-labelledby="diverse">
-            <div class="products-list">
-                <h4>Produits divers du quotidien</h4>
-                <div class="cards row" id="diverse-cards">
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="bathroom" role="tabpanel" aria-labelledby="bathroom">
-            <div class="products-list">
-                <h4>Salle de bain et WC</h4>
-                <div class="cards row" id="bathroom-cards">
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="upcycling" role="tabpanel" aria-labelledby="upcycling">
-            <div class="products-list">
-                <h4>Surcyclage : objets recyclés malins ou déco</h4>
-                <p>
-                    Le surcyclage ou upcycling consiste à récupérer des matériaux ou des produits devenus inutiles
-                    afin de les transformer pour leur donner une nouvelle vie.
-                </p>
-                <div class="cards row" id="upcycling-cards">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-window" tabindex="-1" role="dialog" aria-labelledby="FenêtreModale"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id=""></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <img class="modal-image" src="" height="175px" alt="Autre photographie du produit">
-                <div class="modal-description">
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

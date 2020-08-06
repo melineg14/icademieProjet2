@@ -10,7 +10,7 @@
     </head>
     <body>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand mr-auto" href="{{ path('home') }}"><img id="logo-header" src="../assets/img/logo.bmp"
+        <a class="navbar-brand mr-auto" href="{{ path('home') }}"><img id="logo-header" src=" "
           alt="logo de l'entreprise Printing3D"></a>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-5">
@@ -26,6 +26,15 @@
             <li class="nav-item mr-5 {% if current_page is defined and current_page == 'notice' %} active {% endif %}">
               <a class="nav-link" href="{{ path('notice')}}">Mentions légales</a>
             </li>
+            {# if !user : #}
+            <li class="nav-item mr-5">
+              <a class="nav-link" href=" ">Se connecter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=" ">Créer un compte</a>
+            </li>
+          
+            {# else : #}
             <li class="nav-item mr-5 dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Bienvenue user.name</a>
               {# {% if current_page is defined and current_page == userspace %}active{% endif %} #}
@@ -40,7 +49,7 @@
             <li class="nav-item">
               <a class="nav-link" href=" "><img id="basket-icone" src=" "
             alt="icone du panier"></a>
-            </li>            
+            </li>  
           </ul>
         </div>
       </nav>
@@ -56,5 +65,54 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+        <footer>
+          <div class="row">
+            <div class="col-3 footer-left">
+                <img id="footer-logo" src=" " alt="logo de l'entreprise">
+            </div>
+            <div class="col footer-right">
+                <div class="row">
+                    <div class="col">
+                        <h5>INFOS LEGALES</h5>
+                        <ol>
+                            <li>SARL EPMI / RCS Rennes 537 598 054 / FRANCE</li>
+                            <li>N° déclaration CNIL : 2009208</li>
+                        </ol>
+                    </div>
+                    <div class="col-4">
+                        <h5>DECOUVREZ PRINTING3D</h5>
+                        <ol>
+                            <li><a href="{{ path('home')}}">> A propos de Printing3D</a></li>
+                            <li><a href="{{ path('contact')}}">> Nous contacter</a></li>
+                        </ol>
+                    </div>
+                    <div class="col-4">
+                        <h5>NOS PRODUITS PHARES</h5>
+                        <ol>
+                            <li><a href="{{ path('products')}}">> Cuisine - vaisselles et équipements</a></li>
+                            <li><a href="{{ path('products')}}">> Jardin et plantes</a></li>
+                            <li><a href="{{ path('products')}}">> Objets en tout genre du quotidien</a></li>
+                            <li><a href="{{ path('products')}}">> Salle de bain & WC</a></li>
+                            <li><a href="{{ path('products')}}">> Surcyclage - objets recyclés malins / déco</a></li>
+                        </ol>
+                    </div>
+                    <div class="socialmedia">
+                        <h5>SUIVEZ-NOUS SUR LES RESEAUX SOCIAUX</h5>
+                        <a href="#"><img class="icone-socialmedia" src=""
+                                alt="icone de Facebook"></a>
+                        <a href="#"><img class="icone-socialmedia" src=""
+                                alt="icone de LinkedIn"></a>
+                        <a href="#"><img class="icone-socialmedia" src=""
+                                alt="icone de Instagram"></a>
+                        <a href="#"><img class="icone-socialmedia" src=""
+                                alt="icone de Youtube"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Printing3D©2020 - Tous droits réservés - <a href="{{ path('notice')}}">Mentions légales</a></p>
+        </div>
+        </footer>
     </body>
 </html>

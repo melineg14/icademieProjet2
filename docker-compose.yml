@@ -21,8 +21,8 @@ services:
             - "--lower_case_table_names=1"        
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: mdp
-            MYSQL_USER: mdp
+            MYSQL_DATABASE: printing3d
+            MYSQL_USER: admin
             MYSQL_PASSWORD: mdp
 
     php:
