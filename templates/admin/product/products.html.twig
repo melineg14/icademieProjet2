@@ -5,11 +5,14 @@
 {% block body %}
 <div class="container mt-4">
     <h1>Gérer les produits</h1>
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Titre</th>
-            <th>Actions</th>
+            <th>Titre du produit</th>
+            <th>Actions possibles</th>
         </tr>
         </thead>
         <tbody>
@@ -18,14 +21,19 @@
             <td>{{ product.title }}</td>
             <td>
                 <a class="btn btn-warning" href="{{ path('admin.product.edit', {id: product.id})}}">Editer</a>
+                <form method="post" action="{{ path('admin.product.delete', {id: product.id}) }}" style="display: inline-block;" onsubmit="return confirm('Êtes-vous vraiment sûr ?')">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
+                    <button class="btn btn-danger">Supprimer</button>
+                </form>
             </td>
         </tr>
+        {% endfor %}
         </tbody>
     </table>
-    <div class="text-right">
-        <a class="btn btn-warning" href="{{ path('admin.product.new')}}">Ajouter un produit</a>
+    <div class="text-right mb-5">
+        <a class="btn btn-warning" href="{{ path('admin.product.new') }}">Ajouter un produit</a>
     </div>
-        {% endfor %}
 </div>
 
 {% endblock %}

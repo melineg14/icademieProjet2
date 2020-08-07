@@ -67,7 +67,7 @@
                             <h3 class="card-header">{{ product.title }}</h3>
                             <img style="height: 200px; width: 100%; display: block;" src="{# product.img et extension #}" alt="Photographie du produit">
                             <div class="card-body">
-                              <p class="card-text">{{ product.description }}</p>
+                              <p class="card-text">{{ nl2br(product.description) }}</p>
                             </div>
                             <ul class="list-group list-group-flush">
                               <li class="list-group-item">{{ product.price }} €</li>
@@ -95,7 +95,7 @@
                                 </div>
                                 <img class="modal-image" src="{# product.detail_img et detail_extension #}" height="175px" alt="Autre photographie du produit">
                                 <div class="modal-description mr-2 ml-2">
-                                    {{ product.detail }}
+                                    {{ nl2br(product.detail) }}
                                 </div>
                             </div>
                         </div>
