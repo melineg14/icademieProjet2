@@ -42,12 +42,12 @@
                     aria-selected="false">Jardin et plantes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link cat-nav-link" data-toggle="tab" role="tab" href="#diverse"
-                    aria-controls="divserse" aria-selected="false">Objets en tout genre</a>
+                <a class="nav-link cat-nav-link" data-toggle="tab" role="tab" href="#diverse" aria-controls="divserse"
+                    aria-selected="false">Objets en tout genre</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link cat-nav-link" data-toggle="tab" role="tab" href="#bathroom"
-                    aria-controls="bathroom" aria-selected="false">Salle de bain & WC</a>
+                <a class="nav-link cat-nav-link" data-toggle="tab" role="tab" href="#bathroom" aria-controls="bathroom"
+                    aria-selected="false">Salle de bain & WC</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link cat-nav-link" data-toggle="tab" role="tab" href="#upcycling"
@@ -57,34 +57,39 @@
         </ul>
     </div>
     <div class="tab-content" id="myTabContent">
-        {% for product in products %}
-        <div class="tab-pane fade show active" id="{{ product.getCatType }}" role="tabpanel" aria-labelledby="{{ product.getCatType }}">
+        <div class="tab-pane fade show active" id="{# {{ product.getCatType }} #}" role="tabpanel"
+            aria-labelledby="{# {{ product.getCatType }} #}">
             <div class="products-list">
-                <h4>{{ product.getCatName }}</h4>
-                <div class="row"> 
+                <h4>{#{{ product.getCatName }} #}</h4>
+                <div class="row">
+                    {% for product in products %}
                     <div class="col-4">
-                        <div class="card mb-3 mt-3 mr-3">
+                        <div class="card mb-3 mt-3 mr-2">
                             <h3 class="card-header">{{ product.title }}</h3>
-                            <img style="height: 200px; width: 100%; display: block;" src="{# product.img et extension #}" alt="Photographie du produit">
+                            <img style="height: 200px; width: 300px; display: block;"
+                                src="{# product.img et extension #}" alt="Photographie du produit">
                             <div class="card-body">
-                              <p class="card-text">{{ nl2br(product.description) }}</p>
+                                <p class="card-text">{{ product.description }}</p>
                             </div>
                             <ul class="list-group list-group-flush">
-                              <li class="list-group-item">{{ product.price }} €</li>
-                              <li class="list-group-item"></li>
+                                <li class="list-group-item">{{ product.price }} €</li>
+                                <li class="list-group-item"></li>
                             </ul>
                             <div class="card-body">
                                 <button type="button" class="btn" id="btn-description" data-toggle="modal"
-                                data-target="#modal-window" data-description="" data-image="" data-title="">>Voir le détail</button>
+                                    data-target="#modal-window" data-description="" data-image="" data-title="">>Voir le
+                                    détail</button>
                                 <a href="#" class="card-link"><img src=" " alt="icone d'un panier">Ajouter au panier</a>
                             </div>
-                            <div class="card-footer text-muted"> 
+                            <div class="card-footer text-muted">
                                 {# {{ product.getCreatedAt }} #}
                             </div>
-                          </div>
+                        </div>
                     </div>
-                    <div class="modal fade" id="modal-window" tabindex="-1" role="dialog" aria-labelledby="FenêtreModale"
-                        aria-hidden="true">
+                    {% endfor %}
+
+                    <div class="modal fade" id="modal-window" tabindex="-1" role="dialog"
+                        aria-labelledby="FenêtreModale" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -93,9 +98,10 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <img class="modal-image" src="{# product.detail_img et detail_extension #}" height="175px" alt="Autre photographie du produit">
+                                <img class="modal-image" src="{# product.detail_img et detail_extension #}"
+                                    height="175px" alt="Autre photographie du produit">
                                 <div class="modal-description mr-2 ml-2">
-                                    {{ nl2br(product.detail) }}
+                                    {# {{ product.detail }} #}
                                 </div>
                             </div>
                         </div>
@@ -103,7 +109,7 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
+
     </div>
 </div>
 {% endblock %}

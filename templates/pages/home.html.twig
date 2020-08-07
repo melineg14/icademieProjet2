@@ -8,65 +8,69 @@
         <p class="slogan">Des objets du quotidien malins qui vont vous simplifier la vie</p>
     </div>
     <div class="white-bloc">
-        <div class="about">
-            <h1>A PROPOS / LE PROJET</h1>
-            <h2>Printing3D, une future startup qui pense à vous</h2>
-            <p>
-                Printing3D est une startup en cours de création. Depuis juillet 2019, nous nous efforçons de
-                créer des produits d'impression 3D pour vous simplifier la vie.
-            </p>
-            <p>
-                Ce site vous présente nos produits phares : des objets malins qui vont révolutionner votre
-                quotidien. Notre projet est de, à terme, vous vendre soit nos fichiers STL à imprimer de
-                vous-mêmes soit de vous livrer directement nos produits déjà construits. Nous mettons ainsi en
-                place un système participatif : c'est à vous de nous aider ! Tout d'abord, nous comptons
-                énormément sur vos avis et sur vos idées si vous en avez. Si vous ne trouvez pas l'objet que
-                vous souhaitez, vous pouvez nous le suggérer ! Une rubrique est prévue à cet effet dans l'onglet
-                <a class="home-link" href="produits.html">produits</a>. De plus, Si le projet vous plaît, vous
-                pouvez nous aider à
-                le financer en cliquant <a class="home-link" href="#">ici</a>. Vous pouvez également nous <a
-                    class="home-link" href="#">suivre sur les réseaux sociaux</a>. Vous avez donc compris, vous
-                êtes essentiels à ce projet, vous y avez un rôle. Pour plus de renseignement, n'hésitez pas à <a
-                    class="home-link" href="contact.html">nous contacter</a>.
-            </p>
+        <div class="row">
+            <div class="col"></div>
+            <div class="about col">
+                <h1>A PROPOS</h1>
+                <h2>Printing3D, une entreprise qui pense à vous</h2>
+                <p>
+                    Printing3D est une startup créée en juillet 2013. Depuis ce jour, nous nous efforçons de créer des
+                    produits d'impression 3D qui ont pour objectif de vous simplifier la vie. Vous trouverez <a
+                        href="#product-presentation">ci-dessous</a> ainsi qu’à la rubrique <a
+                        href="{{ path('products') }}">Nos produits</a>, nos produits phares : des
+                    objets malins qui vont révolutionner votre quotidien.
+                </p>
+                <h2>Plusieurs possibilités d’achat</h2>
+                <p>
+                    Il possible de vous vendre soit nos fichiers STL à imprimer par vous-mêmes soit de vous livrer
+                    directement nos produits qui vous correspondent.
+                </p>
+                <h2>Créez vos propres produits !</h2>
+                <p>
+                    Nous mettons également en place un système participatif et intéractif. Si vous ne trouvez pas
+                    l'objet
+                    que vous désirez, vous pouvez nous le suggérer ! Une rubrique est prévue à cet effet dans l'onglet
+                    <a href="{{ path('products') }}">Nos produits</a>.
+                </p>
+                <h2>Ne manquez pas nos dernières créations !</h2>
+                <p>
+                    Créez-vous un compte Printing3D pour recevoir une notification lorsqu’un nouveau produit est proposé
+                    et
+                    pourrait vous intéresser ainsi que pour enregistrer votre panier !
+                </p>
+                <p>
+                    Suivez-nous également sur les réseaux sociaux, nous postons tous les nouveaux produits et
+                    promotions !
+                </p>
+                <p>
+                    Vous l’aurez donc compris, vous êtes essentiels à ce projet, vous y avez un rôle. Pour plus de
+                    renseignement, n'hésitez pas à <a href="{{ path('contact') }}">nous contacter</a>.
+                </p>
+            </div>
         </div>
     </div>
     <div class="white-bloc">
-        <div class="product-presentation">
-            <h1>NOS PRODUITS / CATEGORIES</h1>
-            <div class="row">
-                <div id="product-presentation-img" class="col"></div>
-                <div class="col category-presentation">
-                    <div class="frame">
-                        <div class="second-frame">
-                            <h3>
-                                <img class="category-icone" src="../assets/img/icones/yellow_home.png"
-                                    alt="Icone représentant une maison">Pour la maison
-                            </h3>
-                            <p>
-                                Nous avons tout ce qu'il vous faut ! Que ce soit pour la cuisine (vaisselle et
-                                équipements), ou bien pour la salle de bain, en passant même par des objets
-                                divers qui vont vous surprendre, créés simplement pour vous simplifier le
-                                quotidien !
-                            </p>
-                        </div>
-                    </div>
-                    <div class="frame">
-                        <div class="second-frame">
-                            <h3>
-                                <img class="category-icone" src="../assets/img/icones/yellow_flower.png"
-                                    alt="Icone représentant une fleur">Pour les jardins et plantes
-                            </h3>
-                            <p>
-                                Que ce soit pour votre extérieur, votre jardin ou pour vos plantes, vous
-                                trouverez votre bonheur parmi nos produits. Une fois de plus, vous serez surpris de
-                                tout ce que nous avons pu concevoir !
-                            </p>
-                        </div>
-                    </div>
-                    <a class="home-link" href="produits.html">
-                        <button type="button" id="btn-seeproducts" class="btn">>>VOIR LES PRODUITS</button>
+        <div class="product-presentation" id="product-presentation">
+            <h1>NOS PRODUITS</h1>
+            <div class="card" style="width: 230px; display: block;">
+                <h3 class="card-header">{# {{ product.title }} #}</h3>
+                <img style="height: 150px; width: 220px; display: block;" src="{# product.img et extension #}"
+                    alt="Photographie du produit">
+                <div class="card-body">
+                    <p class="card-text">{# {{ product.description }} #}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{# {{ product.price }} #} €</li>
+                    <li class="list-group-item"></li>
+                </ul>
+                <div class="card-body">
+                    <a class="home-link" href="{{ path('products') }}">
+                        <button type="button" class="btn btn-warning">>Voir les produits</button>
                     </a>
+                    <a href="#" class="card-link"><img src=" " alt="icone d'un panier">Ajouter au panier</a>
+                </div>
+                <div class="card-footer text-muted">
+                    {# {{ product.getCreatedAt }} #}
                 </div>
             </div>
         </div>
