@@ -38,21 +38,23 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Bienvenue user.name</a>
               {# {% if current_page is defined and current_page == userspace %}active{% endif %} #}
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Mon panier</a>
+                <a class="dropdown-item" href="{{ path('cart') }}">Mon panier</a>
                 <a class="dropdown-item" href="#">Mes commandes</a>
                 <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Déconnexion</a>
                 </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href=" "><img id="basket-icone" src=" "
-            alt="icone du panier"></a>
+              <a class="nav-link" href="{{ path('cart') }}">
+                <img src="#" alt="icone d'un panier">
+              </a>
             </li>  
           </ul>
         </div>
       </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+    <script src="https://kit.fontawesome.com/59104be96e.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
