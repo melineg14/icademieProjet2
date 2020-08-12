@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Product
 {
+    //mettre à partir de 1 :
     const CAT = [
         0 => 'kitchen',
         1 => 'garden',
