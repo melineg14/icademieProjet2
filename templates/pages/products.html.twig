@@ -1,34 +1,41 @@
 {% extends 'base.html.twig' %}
 {% block title %}Printing3D - Nos Produits{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('product') }} 
+{% endblock %}
+
 {% block body %}
 <div class="container">
     <div class="suggestion">
-        <h3>Suggérer un produit</h3>
-        <p>Si vous ne trouvez pas l'objet de vos rêves, n'hésitez pas à nous le suggérer !</p>
-        <form class="sugg-form">
-            <div class="form-group">
-                <label for="product">Produit : </label>
-                <input type="text" class="form-control" id="product">
-            </div>
-            <div class="select">
-                <label for="select">Matériaux <span>(facultatif)</span> :</label>
-                <select class="form-control">
-                    <option>ABS</option>
-                    <option>PLA</option>
-                    <option>ASA</option>
-                    <option>PET</option>
-                    <option>PC ou Polycarbonate</option>
-                    <option>Thermoplastiques hautes performances</option>
-                    <option>Matériaux flexibles</option>
-                    <option>Fibres de carbone</option>
-                    <option>Matériaux hybrides</option>
-                    <option>Matériaux solubles</option>
-                    <option>Autre</option>
-                </select>
-            </div>
-            <button type="submit" id="btn-sugg" class="btn btn-warning">Suggérer</button>
-        </form>
+        <a href=""><h3>Suggérer un produit</h3></a>
+        <div>
+            <p id="sugg-p">Si vous ne trouvez pas l'objet de vos rêves, n'hésitez pas à nous le suggérer !</p>
+            <form class="sugg-form">
+                <div class="form-group">
+                    <label for="product">Produit : </label>
+                    <input type="text" class="form-control" id="product">
+                </div>
+                <div class="select">
+                    <label for="select">Matériaux <span>(facultatif)</span> :</label>
+                    <select class="form-control">
+                        <option>ABS</option>
+                        <option>PLA</option>
+                        <option>ASA</option>
+                        <option>PET</option>
+                        <option>PC ou Polycarbonate</option>
+                        <option>Thermoplastiques hautes performances</option>
+                        <option>Matériaux flexibles</option>
+                        <option>Fibres de carbone</option>
+                        <option>Matériaux hybrides</option>
+                        <option>Matériaux solubles</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+                <button type="submit" id="btn-sugg" class="btn btn-warning">Suggérer</button>
+            </form>
+        </div>
     </div>
     <h1>NOS PRODUITS</h1>
     <div class="choose-catagorie">
@@ -64,7 +71,7 @@
                 <div class="row">
                     {% for product in products %}
                     <div class="col-4">
-                        <div class="card mb-5 mt-3 mr-2">
+                        <div class="card mb-3 mt-3 mr-2">
                             <h3 class="card-header">{{ product.title }}</h3>
                             <img style="height: 200px; width: 300px; display: block;"
                                 src="{# product.img et extension #}" alt="Photographie du produit">
@@ -75,10 +82,10 @@
                                 <li class="list-group-item text-center">{{ product.price | number_format(2, '.' , ',') }} €</li>
                             </ul>
                             <div class="card-body">
-                                <button type="button" class="btn btn-warning btn-sm ml-5 mr-3" id="btn-description" data-toggle="modal"
-                                    data-target="#modal-window" data-description="" data-image="" data-title="">Voir le
+                                <button type="button" class="btn btn-warning ml-5 mr-3" id="btn-description" data-toggle="modal"
+                                    data-target="#modal-window" data-description="" data-image="" data-title="">>>Voir le
                                     détail</button>
-                                <a href="{{ path('cart_add', {'id': product.id}) }}" class="card-link">
+                                <a href="{{ path('cart_add', {'id': product.id}) }}" class="card-link" id="cart">
                                     <i class="fas fa-cart-plus"></i>
                                     Ajouter
                                 </a>

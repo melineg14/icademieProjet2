@@ -16,7 +16,7 @@ class IdentificationController extends AbstractController
     {   
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUserName = $authenticationUtils->getLastUsername();
-        return $this->render('pages/identification.html.twig', [
+        return $this->render('security/identification.html.twig', [
             'last_username' => $lastUserName,
             'error' => $error,
             'current_page' => 'identification'

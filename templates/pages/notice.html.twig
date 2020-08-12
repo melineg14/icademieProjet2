@@ -2,8 +2,13 @@
 
 {% block title %}Printing3D - Mentions légales{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('notice') }} 
+{% endblock %}
+
 {% block body %}
-<div class="container">
+<div class="container notice-container">
     <h1>MENTIONS LEGALES</h1>
     <p>En France, toute personne (physique ou morale) souhaitant publier un site web doit respecter un certain
         nombre d'obligations légales. Depuis l’entrée en application du Règlement général de protection des données

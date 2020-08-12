@@ -2,14 +2,19 @@
 
 {% block title %}Printing3D - Créer un compte{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('login') }} 
+{% endblock %}
+
 {% block body %}
-<div class="container mt-4">
+<div class="container">
     {% if error %}
     <div class="alert alert-danger">
         {{ error.messageKey | trans(error.messagedata, 'security') }}
     </div>
     {% endif %}
-    <h1>Se connecter</h1>
+    <h1 class="mt-4">Se connecter</h1>
     <form action="{{ path('identification') }}" method="post">
         <div class="form-group">
             <label for="useremail">Votre email</label>
@@ -19,7 +24,7 @@
             <label for="password">Votre mot de passe</label>
             <input type="password" id="password" name="_password" class="form-control">
         </div>
-        <button type="submit" class="btn btn-warning mb-5">Se connecter</button>
+        <button type="submit" class="btn btn-warning mb-5 login-btn">Se connecter</button>
     </form>
 {#     {{ form_start(form) }}
         {{ form_row(form.email)}}

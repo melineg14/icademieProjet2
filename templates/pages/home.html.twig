@@ -2,6 +2,11 @@
 
 {% block title %}Printing3D{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('home') }} 
+{% endblock %}
+
 {% block body %}
 <div class="container-fluid">
     <div class="banner">
@@ -9,7 +14,7 @@
     </div>
     <div class="white-bloc">
         <div class="row">
-            <div class="col"></div>
+            <div class="col" id="about-img"></div>
             <div class="about col">
                 <h1>A PROPOS</h1>
                 <h2>Printing3D, une entreprise qui pense à vous</h2>
@@ -35,12 +40,8 @@
                 <h2>Ne manquez pas nos dernières créations !</h2>
                 <p>
                     Créez-vous un compte Printing3D pour recevoir une notification lorsqu’un nouveau produit est proposé
-                    et
-                    pourrait vous intéresser ainsi que pour enregistrer votre panier !
-                </p>
-                <p>
-                    Suivez-nous également sur les réseaux sociaux, nous postons tous les nouveaux produits et
-                    promotions !
+                    et pourrait vous intéresser ainsi que pour enregistrer votre panier ! Suivez-nous également sur les 
+                    réseaux sociaux, nous postons tous les nouveaux produits et promotions !
                 </p>
                 <p>
                     Vous l’aurez donc compris, vous êtes essentiels à ce projet, vous y avez un rôle. Pour plus de
@@ -59,12 +60,13 @@
                         <h4 class="card-header">{{ product.title }}</h4>
                         <img style="height: 150px; width: auto; display: block;"
                             src=" " alt="Photographie du produit">
+                        <p class="mr-2 ml-2" style="font-size: 14px;">{{ product.description }}</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-center">{{ product.price | number_format(2, '.' , ',') }} €</li>
                         </ul>
                         <div class="card-body">
                             <a class="home-link" href="{{ path('products') }}">
-                                <button type="button" class="btn btn-warning btn-sm ml-2 mr-2">>Voir les produits</button>
+                                <button type="button" id="btn-see-products" class="btn btn-warning btn-sm mr-2 ml-1">>Voir les produits</button>
                             </a>
                             <a href="{{ path('cart_add', {'id': product.id}) }}" class="card-link">
                                 <i class="fas fa-cart-plus"></i></a>

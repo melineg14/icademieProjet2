@@ -26,6 +26,20 @@ Encore
     .addEntry('app', './assets/js/app.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
+    .addStyleEntry('header', './assets/css/header.css')
+    .addStyleEntry('footer', './assets/css/footer.css')
+    .addStyleEntry('home', './assets/css/home.css')
+    .addStyleEntry('product', './assets/css/product.css')
+    .addStyleEntry('contact', './assets/css/contact.css')
+    .addStyleEntry('notice', './assets/css/notice.css')
+    .addStyleEntry('login', './assets/css/login.css')
+    .addStyleEntry('registration', './assets/css/registration.css')
+
+    .copyFiles({
+        from: './assets/img/general'
+    })
+
+
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

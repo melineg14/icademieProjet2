@@ -2,6 +2,11 @@
 
 {% block title %}Printing3D - Nous contacter{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('contact') }} 
+{% endblock %}
+
 {% block body %}
 <div class="container">
     <h1>NOUS CONTACTER</h1>
@@ -45,7 +50,7 @@
                     <textarea class="form-control" id="contact-message" cols="10" rows="5"></textarea>
                 </div>
                 <small class="form-text text-muted">* = champs obligatoires</small>
-                <button type="submit" class="btn btn-primary mb-3">ENVOYER</button>
+                <button type="submit" id="btn-contact" class="btn btn-primary mb-3">Envoyer</button>
             </form>
         </div>
     </div>
