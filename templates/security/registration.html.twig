@@ -10,7 +10,7 @@
 {% block body %}
 <div class="container mt-2">
     <h1>Créer un compte</h1>
-    <form class="mt-4">
+    <form class="mt-4" method="post">
         {{ form_start(form) }}
         {{ form_row(form.first_name)}}
         {{ form_row(form.last_name)}}
