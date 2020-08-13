@@ -8,6 +8,36 @@
 
 {% block body %}
 <div class="container">
+    <h1>NOS PRODUITS</h1>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-4">
+            <div class="card mb-3 mt-3 mr-2">
+                <h3 class="card-header">{{ product.title }}</h3>
+                <img style="height: 200px; width: 300px; display: block;"
+                    src="{# product.img et extension #}" alt="Photographie du produit">
+                <div class="card-body">
+                    <p class="card-text">{{ product.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">{{ product.price | number_format(2, '.' , ',') }} €</li>
+                </ul>
+                <div class="card-body">
+                    <button type="button" class="btn btn-warning ml-5 mr-3" id="btn-description" data-toggle="modal"
+                        data-target="#modal-window" data-description="" data-image="" data-title="">>>Voir le
+                        détail</button>
+                    <a href="{{ path('cart_add', {'id': product.id}) }}" class="card-link" id="cart">
+                        <i class="fas fa-cart-plus"></i>
+                        Ajouter
+                    </a>
+                </div>
+                <div class="card-footer text-muted">
+                    {# {{ product.getCreatedAt }} #}
+                </div>
+            </div>
+        </div>
+        {% endfor %}   
+    </div>
     <div class="suggestion">
         <a href=""><h3>Suggérer un produit</h3></a>
         <div>
@@ -36,89 +66,6 @@
                 <button type="submit" id="btn-sugg" class="btn btn-warning">Suggérer</button>
             </form>
         </div>
-    </div>
-    <h1>NOS PRODUITS</h1>
-    <div class="choose-catagorie">
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link cat-nav-link active" data-toggle="tab" role="tab" href="#kitchen"
-                    aria-controls="kitchen" aria-selected="true">Pour la cuisine</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link cat-nav-link" data-toggle="tab" role="tab" href="#garden" aria-controls="garden"
-                    aria-selected="false">Jardin et plantes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link cat-nav-link" data-toggle="tab" role="tab" href="#diverse" aria-controls="divserse"
-                    aria-selected="false">Objets en tout genre</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link cat-nav-link" data-toggle="tab" role="tab" href="#bathroom" aria-controls="bathroom"
-                    aria-selected="false">Salle de bain & WC</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link cat-nav-link" data-toggle="tab" role="tab" href="#upcycling"
-                    aria-controls="upcycling" aria-selected="false">Surcyclage - objets
-                    recyclés / déco</a>
-            </li>
-        </ul>
-    </div>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="{# {{ product.getCatType }} #}" role="tabpanel"
-            aria-labelledby="{# {{ product.getCatType }} #}">
-            <div class="products-list">
-                <h4>{#{{ product.getCatName }} #}</h4>
-                <div class="row">
-                    {% for product in products %}
-                    <div class="col-4">
-                        <div class="card mb-3 mt-3 mr-2">
-                            <h3 class="card-header">{{ product.title }}</h3>
-                            <img style="height: 200px; width: 300px; display: block;"
-                                src="{# product.img et extension #}" alt="Photographie du produit">
-                            <div class="card-body">
-                                <p class="card-text">{{ product.description }}</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item text-center">{{ product.price | number_format(2, '.' , ',') }} €</li>
-                            </ul>
-                            <div class="card-body">
-                                <button type="button" class="btn btn-warning ml-5 mr-3" id="btn-description" data-toggle="modal"
-                                    data-target="#modal-window" data-description="" data-image="" data-title="">>>Voir le
-                                    détail</button>
-                                <a href="{{ path('cart_add', {'id': product.id}) }}" class="card-link" id="cart">
-                                    <i class="fas fa-cart-plus"></i>
-                                    Ajouter
-                                </a>
-                            </div>
-                            <div class="card-footer text-muted">
-                                {# {{ product.getCreatedAt }} #}
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-
-                    <div class="modal fade" id="modal-window" tabindex="-1" role="dialog"
-                        aria-labelledby="FenêtreModale" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id=""></h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <img class="modal-image" src="{# product.detail_img et detail_extension #}"
-                                    height="175px" alt="Autre photographie du produit">
-                                <div class="modal-description mr-2 ml-2">
-                                    {# {{ product.detail }} #}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 {% endblock %}

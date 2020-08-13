@@ -13,23 +13,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Product
 {
-    //mettre à partir de 1 :
-    const CAT = [
-        0 => 'kitchen',
-        1 => 'garden',
-        2 => 'diverse',
-        3 => 'bathroom',
-        4 => 'upcycling'
-    ];
-
-    const CAT_NAME = [
-        0 => 'Pour la cuisine',
-        1 => 'Jardin et plantes',
-        2 => 'Objets en tout genre',
-        3 => 'Salle de bain & WC',
-        4 => 'Surcyclage - objets recyclés / déco'
-    ];
-
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -51,11 +34,6 @@ class Product
      * @ORM\Column(type="text")
      */
     private $detail;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $category;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -126,28 +104,6 @@ class Product
         $this->detail = $detail;
 
         return $this;
-    }
-
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    public function getCatType()
-    {
-        return self::CAT[$this->category];
-    }
-
-    public function getCatName() 
-    {
-        return self::CAT_NAME[$this->category];
     }
 
     public function getPicture(): ?string

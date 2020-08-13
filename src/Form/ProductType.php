@@ -22,11 +22,6 @@ class ProductType extends AbstractType
                 'label' => 'Détail',
                 'required' => true
             ])
-            ->add('category',ChoiceType::class, [
-                'choices' => $this->getChoices(),
-                'label' => 'Catégorie du produit',
-                'required' => true 
-                ])
             ->add('picture', null, [
                 'label' => 'Photo (1/2) de présentation du produit',
                 'required' => true
@@ -47,15 +42,5 @@ class ProductType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Product::class,
         ]);
-    }
-
-    private function getChoices()
-    {
-        $choices = Product::CAT_NAME;
-        $output = [];
-        foreach($choices as $key => $value) {
-            $output[$value] = $key;
-        }
-        return $output;
     }
 }

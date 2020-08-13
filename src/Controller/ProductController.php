@@ -28,7 +28,7 @@ class ProductController extends AbstractController
         $products = $this->repository->findAll();
         return $this->render('pages/products.html.twig',[
             'current_page' => 'products',
-            'products' => $products
+            'products' => $products,
         ]);
     }
 }
