@@ -5,10 +5,8 @@ use App\Service\Cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-
 class CartController extends AbstractController
 {
-
     /**
      * @Route("/panier", name="cart")
      */
@@ -17,7 +15,7 @@ class CartController extends AbstractController
         return $this->render('pages/cart.html.twig', [
             'current_page' => 'cart',
             'items' => $cartService->getFullCart(),
-            'total' => $cartService->getTotal()
+            'total' => $cartService->getTotal(),
         ]);
     }
 

@@ -52,11 +52,6 @@ class User implements UserInterface
      */
     private $last_name;
 
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $basket;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -155,18 +150,6 @@ class User implements UserInterface
     public function setLastName(?string $last_name): self
     {
         $this->last_name = $last_name;
-
-        return $this;
-    }
-
-    public function getBasket(): ?bool
-    {
-        return $this->basket;
-    }
-
-    public function setBasket(?bool $basket): self
-    {
-        $this->basket = $basket;
 
         return $this;
     }

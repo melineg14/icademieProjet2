@@ -5,7 +5,6 @@ namespace App\Service\Cart;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-
 class CartService
 {
     protected $session;
@@ -18,7 +17,7 @@ class CartService
     }
 
     public function add(int $id)
-    {
+    { 
         $cart = $this->session->get('cart', []);
 
         if(!empty($cart[$id])) {

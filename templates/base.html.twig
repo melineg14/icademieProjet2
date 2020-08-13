@@ -39,8 +39,7 @@
             </li>
             {% else %}
             <li class="nav-item mr-5 dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Bienvenue user.name</a>
-              {# {% if current_page is defined and current_page == userspace %}active{% endif %} #}
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Bienvenue {{ app.user.getFirstName ~ ' ' ~ app.user.getLastName }}</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{ path('cart') }}">Mon panier</a>
                 <a class="dropdown-item" href="#">Mes commandes</a>
@@ -49,7 +48,7 @@
                 </div>
             </li>
             {% endif %}
-            <li class="nav-item ml-3 {% if current_page is defined and current_page == 'cart' %} active {% endif %}" id="cart">
+            <li class="nav-item ml-4 {% if current_page is defined and current_page == 'cart' %} active {% endif %}" id="cart">
               <a class="nav-link" href="{{ path('cart') }}">
                 <img id="cart-icone" src="{{ asset('build/cart.png') }}" alt="icone d'un panier"> Mon panier
               </a>

@@ -32,7 +32,7 @@ class AdminProductController extends AbstractController
     * @return \Symfony\Component\HttpFoundation\Response
     */
     public function index()
-        {
+    {
         $products = $this->repository->findAll();
         return $this->render('admin/product/products.html.twig', compact('products'));
     }
@@ -47,6 +47,7 @@ class AdminProductController extends AbstractController
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $product->setCreatedAt(new \DateTime());
             $this->em->persist($product);
             $this->em->flush();
             $this->addFlash('success', 'Produit ajouté avec succès');
