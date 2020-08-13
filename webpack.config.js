@@ -23,9 +23,10 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
+    //js
     .addEntry('app', './assets/js/app.js')
-    //.addEntry('page1', './assets/js/page1.js')
-    //.addEntry('page2', './assets/js/page2.js')
+
+    //css
     .addStyleEntry('header', './assets/css/header.css')
     .addStyleEntry('footer', './assets/css/footer.css')
     .addStyleEntry('home', './assets/css/home.css')
@@ -35,11 +36,10 @@ Encore
     .addStyleEntry('login', './assets/css/login.css')
     .addStyleEntry('registration', './assets/css/registration.css')
 
+    //images
     .copyFiles({
         from: './assets/img/general'
     })
-
-
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

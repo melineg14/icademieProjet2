@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Printing3D - Créer un compte{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('login') }} 
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-2">
+    <h1>Connexion</h1>
+    <form class="mt-4" action="{{ path('security_login') }}" method="post">
+        <div class="form-group">
+            <input type="text" name="_username" class="form-control" id="" placeholder="Votre e-mail" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="_password" class="form-control" id="" placeholder="Votre mot de passe" required>
+        </div>
+        <button type="submit" class="btn btn-warning mb-5 login-btn">Se connecter</button>
+    </form>
+</div> 
+
+{% endblock %}

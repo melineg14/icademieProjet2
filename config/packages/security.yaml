@@ -2,6 +2,7 @@ security:
     encoders:
         App\Entity\User:
             algorithm: auto
+            cost: 12
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
@@ -20,17 +21,13 @@ security:
             security: false
         main:
             anonymous: lazy
-            # provider: app_user_provider
-            # pattern:   ^/
-            # http_basic: ~
-            # provider: app_user_provider
-            # anonymous: ~
+            provider: from_datebase
             form_login:
-                login_path: identification
-                check_path: login
+                login_path: security_login
+                check_path: security_login
             logout:
-                path:  /logout
-                target: /
+                path: security_logout
+                target: home
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

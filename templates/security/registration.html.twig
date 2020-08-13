@@ -8,16 +8,18 @@
 {% endblock %}
 
 {% block body %}
-<div class="container mt-4">
+<div class="container mt-2">
     <h1>Créer un compte</h1>
-    {{ form_start(form) }}
-    {{ form_row(form.first_name)}}
-    {{ form_row(form.last_name)}}
-    {{ form_row(form.email)}}
-    {{ form_row(form.password)}}
-        {{ form_rest(form) }}
-        <button class="btn btn-warning mb-5 registration-btn">S'inscrire</button>
-    {{ form_end(form) }}
+    <form class="mt-4">
+        {{ form_start(form) }}
+        {{ form_row(form.first_name)}}
+        {{ form_row(form.last_name)}}
+        {{ form_row(form.email)}}
+        {{ form_row(form.password)}}
+            {{ form_rest(form) }}
+            <button class="btn btn-warning mb-5 registration-btn">S'inscrire</button>
+        {{ form_end(form) }}
+    </form>
 </div>
 
 {% endblock %}
