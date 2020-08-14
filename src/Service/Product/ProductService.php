@@ -18,7 +18,7 @@ class ProductService
 
     public function getAllProducts()
     {
-        return $this->productRepository->findAllByDate();
+        return $this->productRepository->findAllByTitle();
     }
 
     public function getOneProduct($id)
