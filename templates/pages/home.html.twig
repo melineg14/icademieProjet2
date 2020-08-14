@@ -59,7 +59,7 @@
                     <div class="card mb-3 mt-3" style="width: 210px">
                         <h4 class="card-header">{{ product.title }}</h4>
                         <img style="height: 150px; width: auto; display: block;"
-                            src=" " alt="Photographie du produit">
+                            src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="Photographie du produit">
                         <p class="mr-2 ml-2" style="font-size: 14px;">{{ product.description }}</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-center">{{ product.price | number_format(2, ',' , '.') }} €</li>

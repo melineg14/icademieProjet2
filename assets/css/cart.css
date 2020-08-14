@@ -1,0 +1,12 @@
+#button {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FBC000;
+    color: #FFFFFF;
+    border-color: #FBC000;
+    border-radius: 0;
+}
+
+#button:hover {
+    background-color: #FFFFFF;
+    color: #FBC000;
+}

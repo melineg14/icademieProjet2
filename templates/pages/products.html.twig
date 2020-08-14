@@ -14,8 +14,8 @@
         <div class="col-4">
             <div class="card mb-3 mt-3 mr-2">
                 <h3 class="card-header">{{ product.title }}</h3>
-                <img style="height: 200px; width: 300px; display: block;"
-                    src=" " alt="Photographie du produit">
+                <img id="product-img" style="height: 200px; width: 280px;"
+                    src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="Photographie du produit">
                 <div class="card-body">
                     <p class="card-text">{{ product.description }}</p>
                 </div>

@@ -35,6 +35,10 @@ Encore
     .addStyleEntry('notice', './assets/css/notice.css')
     .addStyleEntry('login', './assets/css/login.css')
     .addStyleEntry('registration', './assets/css/registration.css')
+    .addStyleEntry('admin', './assets/css/admin.css')
+    .addStyleEntry('cart', './assets/css/cart.css')
+
+
 
     //images
     .copyFiles({

@@ -6,6 +6,11 @@
     margin-top: .2em;
 }
 
+#product-img {
+    display: block;
+    margin: 1em auto 1em auto;
+}
+
 #btn-description {
     font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
     background-color: #FBC000;
