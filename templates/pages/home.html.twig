@@ -62,17 +62,17 @@
                             src=" " alt="Photographie du produit">
                         <p class="mr-2 ml-2" style="font-size: 14px;">{{ product.description }}</p>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-center">{{ product.price | number_format(2, '.' , ',') }} €</li>
+                            <li class="list-group-item text-center">{{ product.price | number_format(2, ',' , '.') }} €</li>
                         </ul>
                         <div class="card-body">
-                            <a class="home-link" href="{{ path('products') }}">
-                                <button type="button" id="btn-see-products" class="btn btn-warning btn-sm mr-2 ml-1">>Voir les produits</button>
+                            <a class="home-link" href="{{ path('products_detail', {'id': product.id}) }}">
+                                <button type="button" id="btn-see-products" class="btn btn-warning btn-sm mr-3 ml-2">>Voir le détail</button>
                             </a>
                             <a href="{{ path('cart_add', {'id': product.id}) }}" class="card-link">
                                 <i class="fas fa-cart-plus"></i></a>
                         </div>
                         <div class="card-footer text-muted">
-                            {# {{ product.getCreatedAt }} #}
+                           Le : {{ product.createdAt | date("d/m/Y") }}
                         </div>
                     </div>
                 </div>

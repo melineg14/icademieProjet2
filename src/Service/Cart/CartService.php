@@ -7,7 +7,14 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CartService
 {
+    /**
+     * @var SessionInterface
+     */
     protected $session;
+    
+    /**
+     * @var ProductRepository
+     */
     protected $productRepository;
 
     public function __construct(SessionInterface $session, ProductRepository $productRepository)

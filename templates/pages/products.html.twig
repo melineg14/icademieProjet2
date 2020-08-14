@@ -15,24 +15,22 @@
             <div class="card mb-3 mt-3 mr-2">
                 <h3 class="card-header">{{ product.title }}</h3>
                 <img style="height: 200px; width: 300px; display: block;"
-                    src="{# product.img et extension #}" alt="Photographie du produit">
+                    src=" " alt="Photographie du produit">
                 <div class="card-body">
                     <p class="card-text">{{ product.description }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-center">{{ product.price | number_format(2, '.' , ',') }} €</li>
+                    <li class="list-group-item text-center">{{ product.price | number_format(2, ',' , '.') }} €</li>
                 </ul>
                 <div class="card-body">
-                    <button type="button" class="btn btn-warning ml-5 mr-3" id="btn-description" data-toggle="modal"
-                        data-target="#modal-window" data-description="" data-image="" data-title="">>>Voir le
-                        détail</button>
+                    <a href="{{ path('products_detail', {'id': product.id}) }}" class="btn btn-warning ml-5 mr-3" id="btn-description" >>>Voir le détail</a>
                     <a href="{{ path('cart_add', {'id': product.id}) }}" class="card-link" id="cart">
                         <i class="fas fa-cart-plus"></i>
                         Ajouter
                     </a>
                 </div>
                 <div class="card-footer text-muted">
-                    {# {{ product.getCreatedAt }} #}
+                    Ajouté le : {{ product.createdAt | date("d/m/Y") }}
                 </div>
             </div>
         </div>

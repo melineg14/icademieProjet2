@@ -1,34 +1,33 @@
 <?php
 namespace App\Controller;
 
-use App\Entity\Product;
-use App\Repository\ProductRepository;
+use App\Service\Product\ProductService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
     /**
-     * @var ProductRepository
-     */
-    private $repository;
-
-    public function __construct(ProductRepository $repository)
-    {
-        $this->repository = $repository;
-    }
-    /**
      * @Route("/produits", name="products")
-     * @return Response
      */
 
-    public function index(): Response
+    public function index(ProductService $productService)
     {
-        $products = $this->repository->findAll();
         return $this->render('pages/products.html.twig',[
             'current_page' => 'products',
-            'products' => $products,
+            'products' => $productService->getAllProducts(),
+        ]);
+    }
+
+    /**
+    * @Route("/produits/detail/{id}", name="products_detail")
+    */
+    public function getDetail(ProductService $productService, $id)
+    {
+        $product = $productService->getOneProduct($id);
+        return $this->render('pages/productDetail.html.twig',[
+            'current_page' => 'products',
+            'product' => $product,
         ]);
     }
 }

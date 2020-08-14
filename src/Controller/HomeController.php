@@ -14,7 +14,7 @@ class HomeController extends AbstractController
      */
     public function index(ProductRepository $repository): Response
     {
-        $products = $repository->findAll();
+        $products = $repository->findAllByDate();
         return $this->render('pages/home.html.twig', [
             'current_page' => 'home',
             'products' => $products

@@ -33,7 +33,7 @@ class AdminProductController extends AbstractController
     */
     public function index()
     {
-        $products = $this->repository->findAll();
+        $products = $this->repository->findAllByTitle();
         return $this->render('admin/product/products.html.twig', compact('products'));
     }
 

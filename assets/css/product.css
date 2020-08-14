@@ -63,3 +63,13 @@ span {
     font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
     color: #FBC000;
 }
+
+#price {
+    color: #18BC9C;
+    font-size: 32px;
+    text-align: center;
+}
+
+#other_picture {
+    margin-top: 2em;
+}
