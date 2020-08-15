@@ -6,29 +6,18 @@ use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Entity\File as EntityFile;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  * @UniqueEntity("title")
+ * @Vich\Uploadable
  */
 class Product
 {
-    const CAT = [
-        0 => 'kitchen',
-        1 => 'garden',
-        2 => 'diverse',
-        3 => 'bathroom',
-        4 => 'upcycling'
-    ];
-
-    const CAT_NAME = [
-        0 => 'Pour la cuisine',
-        1 => 'Jardin et plantes',
-        2 => 'Objets en tout genre',
-        3 => 'Salle de bain & WC',
-        4 => 'Surcyclage - objets recyclés / déco'
-    ];
-
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -51,25 +40,17 @@ class Product
      */
     private $detail;
 
-    /**
+     /**
      * @ORM\Column(type="string", length=255)
+     * @var string|null
      */
-    private $category;
+    private $imageName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName")
+     * @var File|null
      */
-    private $picture;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $detail_picture;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $picture_extension;
+    private $imageFile;
 
     /**
      * @ORM\Column(type="float")
@@ -82,9 +63,9 @@ class Product
     private $created_at;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    private $detail_picture_extension;
+    private $updated_at;
 
     public function getId(): ?int
     {
@@ -127,70 +108,41 @@ class Product
         return $this;
     }
 
-    public function getCategory(): ?string
+    public function getImageName(): ?string
     {
-        return $this->category;
+        return $this->imageName;
     }
 
-    public function setCategory(string $category): self
+    public function setImageName(?string $imageName): Product
     {
-        $this->category = $category;
+        $this->imageName = $imageName;
 
         return $this;
     }
 
-    public function getCatType()
+    public function getImageFile(): ?File
     {
-        return self::CAT[$this->category];
+        return $this->imageFile;
     }
 
-    public function getCatName() 
+    public function setImageFile(?File $imageFile): Product
     {
-        return self::CAT_NAME[$this->category];
-    }
+        $this->imageFile = $imageFile;
 
-    public function getPicture(): ?string
-    {
-        return $this->picture;
-    }
-
-    public function setPicture(string $picture): self
-    {
-        $this->picture = $picture;
+        if ($this->imageFile instanceof UploadedFile) {
+            $this->updated_at = new \DateTime('now');
+        }
 
         return $this;
     }
 
-    public function getDetailPicture(): ?string
-    {
-        return $this->detail_picture;
-    }
-
-    public function setDetailPicture(string $detail_picture): self
-    {
-        $this->detail_picture = $detail_picture;
-
-        return $this;
-    }
-
-    public function getPictureExtension(): ?string
-    {
-        return $this->picture_extension;
-    }
-
-    public function setPictureExtension(string $picture_extension): self
-    {
-        $this->picture_extension = $picture_extension;
-
-        return $this;
-    }
-
+    //ajouter get price et modifier set price
     public function getPrice(): ?float
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): self
+    public function setPrice(?float $price): self
     {
         $this->price = $price;
 
@@ -214,14 +166,14 @@ class Product
         return $this;
     }
 
-    public function getDetailPictureExtension(): ?string
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
-        return $this->detail_picture_extension;
+        return $this->updated_at;
     }
 
-    public function setDetailPictureExtension(string $detail_picture_extension): self
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
-        $this->detail_picture_extension = $detail_picture_extension;
+        $this->updated_at = $updated_at;
 
         return $this;
     }

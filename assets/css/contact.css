@@ -1,0 +1,37 @@
+p {
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+input::placeholder {
+    font-family: 'roboto light italic', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#btn-contact {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    margin: .5em auto 1em auto;
+    display: block;
+    background-color: #2C3E50;
+    border-radius: 0;
+    border-color: #2C3E50;
+}
+
+#btn-contact:hover {
+    background-color: #FFFFFF;
+    color: #2C3E50;
+}
+
+.form-contact-left {
+    padding: 2em;
+    margin: auto;
+    background-color: #2C3E50;
+    color: white;
+    border-radius: 5px;
+}
+
+.socialmedias {
+    text-align: center;
+}

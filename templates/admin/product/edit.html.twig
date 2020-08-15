@@ -2,30 +2,25 @@
 
 {% block title %}Gérer les produits{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('admin') }} 
+{% endblock %}
+
 {% block body %}
 <div class="container mt-4">
     <h1>Editer le produit</h1>
     {{ form_start(form) }}
     <div class="row">
         <div class="col-md-4">{{ form_row(form.title)}}</div>
-        <div class="col-md-4">{{ form_row(form.category)}}</div>
-        <div class="col-md-4">{{ form_row(form.price)}}</div>
+        <div class="col-md-4">{{ form_row(form.price) }}</div>
     </div>
     <small id="fileHelp" class="form-text text-muted">Seuls les fichiers .jpg et .png sont acceptés.</small>
     <div class="row">
-        <div class="col-md-4">{{ form_row(form.picture)}}</div>
-        <div class="col-md-4">{{ form_row(form.detail_picture)}}</div>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-4">
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-        </div>
-        <div class="form-group col-md-4">
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-        </div>
+        <div class="col-md-4">{{ form_row(form.imageFile)}}</div>
     </div>
         {{ form_rest(form) }}
-        <button class="btn btn-warning mb-5">Editer</button>
+        <button id="button" class="btn btn-warning mb-5">Editer</button>
     {{ form_end(form) }}
 </div>
 

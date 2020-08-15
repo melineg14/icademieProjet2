@@ -1,0 +1,15 @@
+.notice-container {
+    width: 63%;
+    margin: auto;
+}
+
+.mention-link {
+    text-decoration: none;
+    color: #2C3E50;
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mention-link:hover {
+    text-decoration: none;
+    color: #FBC000;
+}

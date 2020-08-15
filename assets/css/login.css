@@ -1,0 +1,23 @@
+form {
+    width: 500px;
+    display: block;
+    margin: auto;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.login-btn {
+    margin: .5em auto 1em auto;
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    display: block;
+    border-radius: 0;
+}
+
+.login-btn:hover {
+    background-color: #FFFFFF;
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    color: #FBC000;
+}

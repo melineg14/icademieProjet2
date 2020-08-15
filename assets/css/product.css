@@ -1,0 +1,98 @@
+.card {
+    margin-bottom: 2em;
+}
+
+.card-img-top {
+    margin-top: .2em;
+}
+
+#product-img {
+    display: block;
+    margin: 1em auto 1em auto;
+}
+
+#btn-description {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FBC000;
+    color: #FFFFFF;
+    border-color: #FBC000;
+    border-radius: 0;
+}
+
+#btn-description:hover {
+    background-color: #FFFFFF;
+    color: #FBC000;
+}
+
+#cart {
+    font-size: 16px;
+    color: #18BC9C;
+}
+
+.suggestion {
+    background-color: #2C3E50;
+    width: 600px;
+    margin: 1em auto 1em auto;
+    padding: .5em;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+#sugg-p {
+    text-align: center;
+}
+
+span {
+    font-family: 'roboto light italic', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sugg-form {
+    width: 50%;
+    margin: auto;
+}
+
+#btn-sugg {
+    margin: .5em auto 1em auto;
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    display: block;
+    border-radius: 0;
+}
+
+#btn-sugg:hover {
+    background-color: #FFFFFF;
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    color: #FBC000;
+}
+
+#price {
+    color: #18BC9C;
+    font-size: 32px;
+    text-align: center;
+}
+
+#other_picture {
+    margin-top: 2em;
+}
+
+#btn-add {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FBC000;
+    color: #FFFFFF;
+    border-color: #FBC000;
+    border-radius: 0;
+    margin: 1.5em auto 0 auto;
+    display: block;
+    width: max-content;
+    font-size: 18px;
+}
+
+#btn-add:hover {
+    background-color: #FFFFFF;
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    color: #FBC000;
+}

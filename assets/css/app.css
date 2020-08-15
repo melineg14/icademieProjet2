@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Kiona', sans-serif;
+    src: url('../fonts/kiona/Kiona-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto thin';
+    src: url('../fonts/roboto/Roboto-Thin.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'roboto light';
+    src: url('../fonts/roboto/Roboto-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'roboto light italic';
+    src: url('../fonts/roboto/Roboto-LightItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'roboto regular';
+    src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; 
+}
+
+body {
+    color: grey;
+    font-family: 'roboto light', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+p {
+    text-align: justify;
+}
+
+/* titles */
+h1 {
+    font-family: 'Kiona',  Verdana, Geneva, Tahoma, sans-serif;
+    color:  #FBC000;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'roboto light', Verdana, Geneva, Tahoma, sans-serif;
+    color: #18BC9C;
+    font-size: 22px;  
+}
+
+h3 {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    color: #FBC000; 
+    text-align: center;
+    font-size: 22px; 
+}
+
+h4 {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    color: #18BC9C;
+    font-size: 20px;
+    text-align: center;
+    padding: .5em;
+}
+
+h5 {
+    font-family: 'roboto thin', Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #FBC000;
+    font-size: 18px;
+    padding-bottom: .5em;
+    border-bottom: 1px dashed #FBC000;
+}

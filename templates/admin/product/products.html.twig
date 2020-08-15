@@ -2,6 +2,11 @@
 
 {% block title %}Gérer les produits{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('admin') }} 
+{% endblock %}
+
 {% block body %}
 <div class="container mt-4">
     <h1>Gérer les produits</h1>
@@ -20,11 +25,11 @@
         <tr>
             <td>{{ product.title }}</td>
             <td>
-                <a class="btn btn-warning" href="{{ path('admin.product.edit', {id: product.id})}}">Editer</a>
+                <a class="btn btn-warning" id="button" href="{{ path('admin.product.edit', {id: product.id})}}">Editer</a>
                 <form method="post" action="{{ path('admin.product.delete', {id: product.id}) }}" style="display: inline-block;" onsubmit="return confirm('Êtes-vous vraiment sûr ?')">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
-                    <button class="btn btn-danger">Supprimer</button>
+                    <button id="delete-button" class="btn btn-danger">Supprimer</button>
                 </form>
             </td>
         </tr>
@@ -32,7 +37,7 @@
         </tbody>
     </table>
     <div class="text-right mb-5">
-        <a class="btn btn-warning" href="{{ path('admin.product.new') }}">Ajouter un produit</a>
+        <a id="button" class="btn btn-warning" href="{{ path('admin.product.new') }}">Ajouter un produit</a>
     </div>
 </div>
 

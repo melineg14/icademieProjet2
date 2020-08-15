@@ -1,58 +1,124 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Printing3D - Votre panier{% endblock %}
+{% block title %}Printing3D - Votre panier
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('cart') }}
+{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>Votre panier</h1>
-    {% if items | length > 0 %}
-        <table class="table mt-3 mb-4">
-            <thead>
-                <tr class="table-primary">
-                    <th>Titre</th>
-                    <th>Prix unitaire</th>
-                    <th>Quantité</th>
-                    <th>Total</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in items %}
-                <tr>
-                    <td>{{ item.product.title }}</td>
-                    <td>{{ item.product.price | number_format(2, '.' , ',') }} €</td>
-                    <td>
-                        <a href="{{ path('cart_removeOne', {'id': item.product.id}) }}" class="btn btn-outline-primary btn-sm">-</a>
-                        {% if item.newQuantity is defined %}
-                            {{ item.newQuantity }}
-                        {% else %}
-                            {{ item.quantity }}
-                        {% endif %}
-                        <a href="{{ path('cart_add', {'id': item.product.id}) }}" class="btn btn-outline-primary btn-sm">+</a>
-                    </td>
-                    <td>{{ item.product.price * item.quantity | number_format(2, '.' , ',') }} €</td>
-                    <td>
-                        <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-                <tfoot>
-                    <tr>
-                        <td colspan="3" class="text-right font-weight-bold">Total :</td>
-                        <td class="font-weight-bold">{{ total | number_format(2, '.' , ',') }} €</td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" class="text-center">
-                            <button class="btn btn-warning">Commander</button>
-                        </td>
-                    </tr>
-                </tfoot>
-            </tbody>
-        </table>
-    {% else %}
-        <p>Votre panier est vide.</p>
-    {% endif %}
-</div>
+	<div class="container">
+		<h1>Mon panier</h1>
+		{% if not app.user %}
+			{% if items | length == 0 %}
+				<p>Votre panier est vide.</p>
+			{% else %}
+				<table class="table mt-3 mb-4">
+					<thead>
+						<tr class="table-primary">
+							<th>Titre</th>
+							<th>Prix unitaire</th>
+							<th>Quantité</th>
+							<th>Total</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in items %}
+							<tr>
+								<td>{{ item.product.title }}</td>
+								<td>{{ item.product.price | number_format(2, '.' , ',') }}
+									€</td>
+								<td>
+									<a href="{{ path('cart_removeOne', {'id': item.product.id}) }}" class="btn btn-outline-primary btn-sm">-</a>
+									{% if item.newQuantity is defined %}
+										{{ item.newQuantity }}
+									{% else %}
+										{{ item.quantity }}
+									{% endif %}
+									<a href="{{ path('cart_add', {'id': item.product.id}) }}" class="btn btn-outline-primary btn-sm">+</a>
+								</td>
+								<td>{{ item.product.price * item.quantity | number_format(2, '.' , ',') }}
+									€</td>
+								<td>
+									<a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
+										<i class="fas fa-trash-alt"></i>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3" class="text-right font-weight-bold">Total :</td>
+							<td class="font-weight-bold">{{ total | number_format(2, '.' , ',') }}
+								€</td>
+						</tr>
+						<tr>
+							<td colspan="4" class="text-center">
+								<button id="button" class="btn btn-warning">Commander</button>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			{% endif %}
+		{% else %}
+			{% if userItems | length == 0 %}
+				<p>Votre panier est vide.</p>
+			{% else %}
+				<table class="table mt-3 mb-4">
+					<thead>
+						<tr class="table-primary">
+							<th>Titre</th>
+							<th>Prix unitaire</th>
+							<th>Quantité</th>
+							<th>Total</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for userItem in userItems %}
+
+							<tr>
+								<td>{{ userItem.product.title }}</td>
+								<td>{{ userItem.product.price | number_format(2, '.' , ',') }}
+									€</td>
+								<td>
+									<a href="{{ path('cart_removeOne', {'id': userItem.product.id}) }}" class="btn btn-outline-primary btn-sm">-</a>
+									{% if userItem.newQuantity is defined %}
+										{{ userItem.newQuantity }}
+									{% else %}
+										{{ userItem.quantity }}
+									{% endif %}
+									<a href="{{ path('cart_add', {'id': userItem.product.id}) }}" class="btn btn-outline-primary btn-sm">+</a>
+								</td>
+								<td>{{ userItem.product.price * userItem.quantity | number_format(2, '.' , ',') }}
+									€</td>
+								<td>
+									<a href="{{ path('cart_remove', {'id': userItem.product.id}) }}" class="btn btn-danger btn-sm">
+										<i class="fas fa-trash-alt"></i>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3" class="text-right font-weight-bold">Total :</td>
+							<td class="font-weight-bold">{{ total | number_format(2, '.' , ',') }}
+								€</td>
+						</tr>
+						<tr>
+							<td colspan="4" class="text-center">
+								<button id="button" class="btn btn-warning">Commander</button>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			{% endif %}
+		{% endif %}
+	</div>
 {% endblock %}

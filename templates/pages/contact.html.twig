@@ -2,6 +2,11 @@
 
 {% block title %}Printing3D - Nous contacter{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('contact') }} 
+{% endblock %}
+
 {% block body %}
 <div class="container">
     <h1>NOUS CONTACTER</h1>
@@ -11,43 +16,41 @@
         <div class="col-4 form-contact-left">
             <h5>Pas de réponse sous 24h ? </h5>
             <p>N'hésitez pas à nous contacter par un de ces moyens : </p>
-            <ol>
-                <li><img class="contact-icone" src="../assets/img/yellow_phone.png" alt="icone symbolisant un téléphone">04.66.05.09.88</li>
-                <li><img class="contact-icone" src="../assets/img/yellow_mail.png" alt="icone symbolisant un courrier">printing3d@contact.com</li>
-                <li><img class="contact-icone" src="../assets/img/yellow_location.png" alt="icone symbolisant la localisation">9, rue des Chaligny</li>
-                <li class="city">06200 NICE</li>
-            </ol>
+            <ul>
+                <li><span class="mr-1" style="font-size: 1.2em; color: #FBC000;"><i class="fas fa-phone"></i></span> 04.66.05.09.88
+                <li><span class="mr-1" style="font-size: 1.2em; color: #FBC000;"><i class="fas fa-envelope"></i></span> contact@printing3d.com
+                <li><span class="ml-1 mr-1" style="font-size: 1.2em; color: #FBC000;"><i class="fas fa-map-marker-alt"></i></span> 9, rue des Chaligny
+                <li class="city ml-4">06200 NICE</li>
+            </ul>
             <h5>Nous suivre</h5>
             <div class="socialmedias">
-                <a href="#"><img class="social-media" src="../assets/img/facebook.png" alt="icone de Facebook"></a>
-                <a href="#"><img class="social-media" src="../assets/img/linkedin.png" alt="icone de LinkedIn"></a>
-                <a href="#"><img class="social-media" src="../assets/img/instagram.png" alt="icone de Instragram"></a>
-                <a href="#"><img class="social-media" src="../assets/img/youtube.png" alt="icone de YouTube"></a>
+                <a href="#" class="mr-2"><span style="font-size: 2em; color: #FBC000;"><i class="fab fa-facebook"></i></span></a>
+                <a href="#" class="mr-2"><span style="font-size: 2em; color: #FBC000;"><i class="fab fa-linkedin"></i></span></a>
+                <a href="#" class="mr-2"><span style="font-size: 2em; color: #FBC000;"><i class="fab fa-instagram"></i></span></a>
+                <a href="#" class="mr-2"><span style="font-size: 2em; color: #FBC000;"><i class="fab fa-youtube"></i></span></a>
             </div>
         </div>
         <div class="col-6 form-contact-right">
             <form>
                 <div class="form-group">
-                    <img class="contact-icone" src="../assets/img/blue_contact.png"
-                        alt="icone symbolisant un individu">
+                    <span class="mr-1" style="font-size: 1.2em; color: #2C3E50;"><i class="fas fa-user-alt"></i></span>
                     <label for="contact-name">Votre nom*</label>
                     <input type="text" class="form-control" id="contact-name" placeholder="Prénom NOM" required>
                 </div>
                 <div class="form-group">
-                    <img class="contact-icone" src="../assets/img/blue_mail.png"
-                        alt="icone symbolisant un courrier">
+                    <span class="mr-1" style="font-size: 1.2em; color: #2C3E50;"><i class="fas fa-envelope"></i></span>
                     <label for="contact-mail">Votre e-mail*</label>
                     <input type="text" class="form-control" id="contact-mail" placeholder="email@exemple.com" required>
                     <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre adresse
                         e-mail, elle sert simplement à ce que l'on puisse vous répondre.</small>
                 </div>
                 <div class="form-group">
-                    <img class="contact-icone" src="../assets/img/blue_msg.png" alt="icone symbolisant un crayon">
+                    <span class="mr-1" style="font-size: 1.2em; color: #2C3E50;"><i class="fas fa-pen"></i></span>
                     <label for="contact-message">Votre message*</label>
                     <textarea class="form-control" id="contact-message" cols="10" rows="5"></textarea>
                 </div>
                 <small class="form-text text-muted">* = champs obligatoires</small>
-                <button type="submit" class="btn btn-primary">ENVOYER</button>
+                <button type="submit" id="btn-contact" class="btn btn-primary mb-3">Envoyer</button>
             </form>
         </div>
     </div>

@@ -2,6 +2,11 @@
 
 {% block title %}Printing3D{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+{{ encore_entry_link_tags('home') }} 
+{% endblock %}
+
 {% block body %}
 <div class="container-fluid">
     <div class="banner">
@@ -9,8 +14,8 @@
     </div>
     <div class="white-bloc">
         <div class="row">
-            <div class="col"></div>
-            <div class="about col">
+            <div class="col" id="about-img"></div>
+            <div class="about col" id="about">
                 <h1>A PROPOS</h1>
                 <h2>Printing3D, une entreprise qui pense à vous</h2>
                 <p>
@@ -35,12 +40,8 @@
                 <h2>Ne manquez pas nos dernières créations !</h2>
                 <p>
                     Créez-vous un compte Printing3D pour recevoir une notification lorsqu’un nouveau produit est proposé
-                    et
-                    pourrait vous intéresser ainsi que pour enregistrer votre panier !
-                </p>
-                <p>
-                    Suivez-nous également sur les réseaux sociaux, nous postons tous les nouveaux produits et
-                    promotions !
+                    et pourrait vous intéresser ainsi que pour enregistrer votre panier ! Suivez-nous également sur les 
+                    réseaux sociaux, nous postons tous les nouveaux produits et promotions !
                 </p>
                 <p>
                     Vous l’aurez donc compris, vous êtes essentiels à ce projet, vous y avez un rôle. Pour plus de
@@ -52,26 +53,30 @@
     <div class="white-bloc">
         <div class="product-presentation" id="product-presentation">
             <h1>NOS PRODUITS</h1>
-            <div class="card" style="width: 230px; display: block;">
-                <h3 class="card-header">{# {{ product.title }} #}</h3>
-                <img style="height: 150px; width: 220px; display: block;" src="{# product.img et extension #}"
-                    alt="Photographie du produit">
-                <div class="card-body">
-                    <p class="card-text">{# {{ product.description }} #}</p>
+            <div class="row">
+            {% for product in products %}
+                <div class="col">
+                    <div class="card mb-3 mt-3" style="width: 210px">
+                        <h4 class="card-header">{{ product.title }}</h4>
+                        <img style="height: 150px; width: auto; display: block;"
+                            src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="Photographie du produit">
+                        <p class="mr-2 ml-2" style="font-size: 14px;">{{ product.description }}</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-center">{{ product.price | number_format(2, ',' , '.') }} €</li>
+                        </ul>
+                        <div class="card-body">
+                            <a class="home-link" href="{{ path('products_detail', {'id': product.id}) }}">
+                                <button type="button" id="btn-see-products" class="btn btn-warning btn-sm mr-3 ml-2">>Voir le détail</button>
+                            </a>
+                            <a href="{{ path('cart_add', {'id': product.id}) }}" class="card-link">
+                                <i class="fas fa-cart-plus"></i></a>
+                        </div>
+                        <div class="card-footer text-muted">
+                           Le : {{ product.createdAt | date("d/m/Y") }}
+                        </div>
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{# {{ product.price }} #} €</li>
-                    <li class="list-group-item"></li>
-                </ul>
-                <div class="card-body">
-                    <a class="home-link" href="{{ path('products') }}">
-                        <button type="button" class="btn btn-warning">>Voir les produits</button>
-                    </a>
-                    <a href="#" class="card-link"><img src=" " alt="icone d'un panier">Ajouter au panier</a>
-                </div>
-                <div class="card-footer text-muted">
-                    {# {{ product.getCreatedAt }} #}
-                </div>
+            {% endfor %}
             </div>
         </div>
     </div>
@@ -104,7 +109,7 @@
     <div class="slide">
         <div class="partners">
             <h1>NOS PARTENAIRES</h1>
-            <h4>N'hésitez pas à devenir partenaires, <a class="home-link" href="contact.html">contactez nous</a>
+            <h4>N'hésitez pas à devenir partenaires, <a class="home-link" href="{{ path('contact') }}">contactez nous</a>
                 pour que cette rubrique se remplisse !</h4>
         </div>
     </div>

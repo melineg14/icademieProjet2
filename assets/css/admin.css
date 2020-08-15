@@ -1,0 +1,25 @@
+#button {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FBC000;
+    color: #FFFFFF;
+    border-color: #FBC000;
+    border-radius: 0;
+}
+
+#button:hover {
+    background-color: #FFFFFF;
+    color: #FBC000;
+}
+
+#delete-button {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #ec5445;
+    color: #FFFFFF;
+    border-color: #ec5445;
+    border-radius: 0;
+}
+
+#delete-button:hover {
+    background-color: #FFFFFF;
+    color: #ec5445;
+}

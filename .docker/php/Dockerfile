@@ -20,6 +20,21 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen && \
     locale-gen
 
+ARG NODE_VERSION=10.13.0
+ARG NVM_DIR=/usr/local/nvm
+
+# https://github.com/creationix/nvm#install-script
+RUN mkdir $NVM_DIR && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+# add node and npm to path so the commands are available
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# confirm installation
+RUN node -v
+RUN npm -v
+# end NODEJS -----------------------------------------------------------------------------------------------------------
+
 WORKDIR /home/wwwroot/
 
 EXPOSE 9000

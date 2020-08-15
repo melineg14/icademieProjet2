@@ -3,6 +3,9 @@ security:
         App\Entity\User:
             algorithm: auto
 
+
+
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         from_datebase:
@@ -10,28 +13,26 @@ security:
                 class: App\Entity\User
                 property: email
         # used to reload user from session & other features (e.g. switch_user)
-        # app_user_provider:
-        #     entity:
-        #         class: App\Entity\User
-        #         property: email
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+        # used to reload user from session & other features (e.g. switch_user)
+        # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: lazy
-            # provider: app_user_provider
-            # pattern:   ^/
-            # http_basic: ~
-            # provider: app_user_provider
-            # anonymous: ~
+            provider: from_datebase
             form_login:
-                login_path: identification
-                check_path: login
+                login_path: security_login
+                check_path: security_login
             logout:
-                path:  /logout
-                target: /
-
+                path: security_logout
+                target: home
+                
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 
@@ -44,5 +45,5 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        #- { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/profile, roles: ROLE_USER }
