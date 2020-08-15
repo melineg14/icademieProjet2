@@ -1,0 +1,39 @@
+p {
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+input::placeholder {
+    font-family: 'roboto light italic', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#btn-contact {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    margin: .5em auto 1em auto;
+    display: block;
+    background-color: #2C3E50;
+    border-radius: 0;
+    border-color: #2C3E50;
+}
+
+#btn-contact:hover {
+    background-color: #FFFFFF;
+    color: #2C3E50;
+}
+
+.form-contact-left {
+    padding: 2em;
+    margin: auto;
+    background-color: #2C3E50;
+    color: white;
+    border-radius: 5px;
+}
+
+.socialmedias {
+    text-align: center;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vY29udGFjdC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSx1RUFBdUU7QUFDM0U7O0FBRUE7SUFDSSxrRUFBa0U7SUFDbEUsMEJBQTBCO0lBQzFCLGNBQWM7SUFDZCx5QkFBeUI7SUFDekIsZ0JBQWdCO0lBQ2hCLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWix5QkFBeUI7SUFDekIsWUFBWTtJQUNaLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGtCQUFrQjtBQUN0QixDIiwiZmlsZSI6ImNvbnRhY3QuY3NzIiwic291cmNlc0NvbnRlbnQiOlsicCB7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4uZm9ybS1jb250cm9sIHtcbiAgICBib3JkZXItcmFkaXVzOiAwO1xufVxuXG5pbnB1dDo6cGxhY2Vob2xkZXIge1xuICAgIGZvbnQtZmFtaWx5OiAncm9ib3RvIGxpZ2h0IGl0YWxpYycsIFZlcmRhbmEsIEdlbmV2YSwgVGFob21hLCBzYW5zLXNlcmlmO1xufVxuXG4jYnRuLWNvbnRhY3Qge1xuICAgIGZvbnQtZmFtaWx5OiAncm9ib3RvIHJlZ3VsYXInLCBWZXJkYW5hLCBHZW5ldmEsIFRhaG9tYSwgc2Fucy1zZXJpZjtcbiAgICBtYXJnaW46IC41ZW0gYXV0byAxZW0gYXV0bztcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMkMzRTUwO1xuICAgIGJvcmRlci1yYWRpdXM6IDA7XG4gICAgYm9yZGVyLWNvbG9yOiAjMkMzRTUwO1xufVxuXG4jYnRuLWNvbnRhY3Q6aG92ZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNGRkZGRkY7XG4gICAgY29sb3I6ICMyQzNFNTA7XG59XG5cbi5mb3JtLWNvbnRhY3QtbGVmdCB7XG4gICAgcGFkZGluZzogMmVtO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMkMzRTUwO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG59XG5cbi5zb2NpYWxtZWRpYXMge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn0iXSwic291cmNlUm9vdCI6IiJ9*/

@@ -1,0 +1,25 @@
+form {
+    width: 500px;
+    display: block;
+    margin: auto;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.registration-btn {
+    margin: .5em auto 1em auto;
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    display: block;
+    border-radius: 0;
+}
+
+.registration-btn:hover {
+    background-color: #FFFFFF;
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    color: #FBC000;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vcmVnaXN0cmF0aW9uLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixjQUFjO0lBQ2QsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLDBCQUEwQjtJQUMxQixrRUFBa0U7SUFDbEUsWUFBWTtJQUNaLGNBQWM7SUFDZCxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSx5QkFBeUI7SUFDekIsa0VBQWtFO0lBQ2xFLGNBQWM7QUFDbEIsQyIsImZpbGUiOiJyZWdpc3RyYXRpb24uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZm9ybSB7XG4gICAgd2lkdGg6IDUwMHB4O1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIG1hcmdpbjogYXV0bztcbn1cblxuLmZvcm0tY29udHJvbCB7XG4gICAgYm9yZGVyLXJhZGl1czogMDtcbn1cblxuLnJlZ2lzdHJhdGlvbi1idG4ge1xuICAgIG1hcmdpbjogLjVlbSBhdXRvIDFlbSBhdXRvO1xuICAgIGZvbnQtZmFtaWx5OiAncm9ib3RvIHJlZ3VsYXInLCBWZXJkYW5hLCBHZW5ldmEsIFRhaG9tYSwgc2Fucy1zZXJpZjtcbiAgICBjb2xvcjogd2hpdGU7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgYm9yZGVyLXJhZGl1czogMDtcbn1cblxuLnJlZ2lzdHJhdGlvbi1idG46aG92ZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNGRkZGRkY7XG4gICAgZm9udC1mYW1pbHk6ICdyb2JvdG8gcmVndWxhcicsIFZlcmRhbmEsIEdlbmV2YSwgVGFob21hLCBzYW5zLXNlcmlmO1xuICAgIGNvbG9yOiAjRkJDMDAwO1xufSJdLCJzb3VyY2VSb290IjoiIn0=*/

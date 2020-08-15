@@ -1,0 +1,14 @@
+#button {
+    font-family: 'roboto regular', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FBC000;
+    color: #FFFFFF;
+    border-color: #FBC000;
+    border-radius: 0;
+}
+
+#button:hover {
+    background-color: #FFFFFF;
+    color: #FBC000;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vY2FydC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxrRUFBa0U7SUFDbEUseUJBQXlCO0lBQ3pCLGNBQWM7SUFDZCxxQkFBcUI7SUFDckIsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0kseUJBQXlCO0lBQ3pCLGNBQWM7QUFDbEIsQyIsImZpbGUiOiJjYXJ0LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNidXR0b24ge1xuICAgIGZvbnQtZmFtaWx5OiAncm9ib3RvIHJlZ3VsYXInLCBWZXJkYW5hLCBHZW5ldmEsIFRhaG9tYSwgc2Fucy1zZXJpZjtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkJDMDAwO1xuICAgIGNvbG9yOiAjRkZGRkZGO1xuICAgIGJvcmRlci1jb2xvcjogI0ZCQzAwMDtcbiAgICBib3JkZXItcmFkaXVzOiAwO1xufVxuXG4jYnV0dG9uOmhvdmVyIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZGRkZGO1xuICAgIGNvbG9yOiAjRkJDMDAwO1xufSJdLCJzb3VyY2VSb290IjoiIn0=*/
